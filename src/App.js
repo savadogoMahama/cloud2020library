@@ -6,6 +6,7 @@ import BodyPerso from "./components/BodyPerso";
 import FooterPerso from "./components/FooterPerso";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
+import Admin from "./components/Admin";
 
 export default function App() {
   return (
@@ -15,6 +16,9 @@ export default function App() {
         <Switch>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/admin">
+            <Admin />
           </Route>
           <Route path="/">
             <BodyPerso />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export default function Login() {
   return (
     <form>
@@ -25,8 +26,8 @@ export default function Login() {
         />
       </div>
 
-      <button type="submit" className="btn btn-primary">
-        Submit
+      <button type="submit" className="">
+        <Link to="/admin"> Submit</Link>
       </button>
     </form>
   );
