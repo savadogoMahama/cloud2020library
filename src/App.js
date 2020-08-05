@@ -1,12 +1,28 @@
 import React from "react";
 import "./styles.css";
 
+import HeaderPerso from "./components/HeaderPerso";
+import BodyPerso from "./components/BodyPerso";
+import FooterPerso from "./components/FooterPerso";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./components/Login";
+
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <p>tout se passe bien</p>
+      <Router>
+        <HeaderPerso />
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <BodyPerso />
+          </Route>
+        </Switch>
+      </Router>
+
+      <FooterPerso />
     </div>
   );
 }
