@@ -10,19 +10,24 @@ export default class StudentAdd extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { name, surname, birthDate, domain, email } = this.state;
-    let apiRequest = new XMLHttpRequest();
-    apiRequest.onreadystatechange = () => {
-      if (apiRequest.status === 404) {
-        console.log("une erreur s'est produit lors de l'envoi");
-      } else if (apiRequest.readyState === 4) {
-        let response = apiRequest.response;
-        console.log(response);
-      }
-    };
-    apiRequest.open("GET", "http://localhost:8081/studentList");
-    // apiRequest.open("GET", "http://localhost:8088/inscription");
+    /* const requestOptions = {
+      method: "POST",
 
-    apiRequest.send();
+      //Accept: "application/json",
+      //headers: { "Content-Type": "application/json" },
+      body: this.state
+    };
+    if (window.fetch) {
+      fetch("http://localhost:8081/studentAdd", this.state)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          this.setState({});
+        });
+    } else {
+      console.log("browser does not support");
+    }
+  };*/
   };
   handleNameChange = (event) => {
     this.setState({ name: event.target.value });
